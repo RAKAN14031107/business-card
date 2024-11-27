@@ -1,0 +1,164 @@
+/* إعدادات الصفحة العامة */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #1e3c72, #2a5298); /* خلفية متدرجة */
+    color: #fff;
+}
+
+/* تصميم البطاقة */
+.business-card {
+    text-align: center;
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 300px;
+    color: #333;
+}
+
+/* الصورة الشخصية */
+.profile-image {
+    width: 120px;
+    height: 120px;
+    margin: 0 auto 15px;
+    border: 5px solid #1e3c72;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.profile-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* النصوص */
+h1 {
+    font-size: 1.5em;
+    margin: 10px 0;
+    color: #333;
+}
+
+p {
+    font-size: 0.9em;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+/* رقم الهاتف */
+p:last-of-type {
+    color: #1e3c72;
+    font-weight: bold;
+    font-size: 1em;
+    margin-bottom: 20px;
+}
+
+/* أيقونات وسائل التواصل */
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.icon {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #1e3c72;
+    color: white;
+    font-size: 1.2em;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    position: relative;
+}
+
+/* النص التوضيحي للأيقونات */
+.icon::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #333;
+    color: white;
+    font-size: 0.8em;
+    padding: 5px 10px;
+    border-radius: 5px;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+.icon:hover::after {
+    opacity: 1;
+    visibility: visible;
+}
+
+.icon:hover {
+    background-color: #2a5298;
+    transform: scale(1.1);
+}
+
+/* زر الحفظ */
+.download-btn {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #1e3c72;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.download-btn a {
+    color: white;
+    text-decoration: none;
+}
+
+.download-btn a i {
+    margin-right: 5px;
+}
+
+.download-btn:hover {
+    background-color: #2a5298;
+    transform: scale(1.05);
+}
+
+/* تحسين العرض على الهواتف */
+@media screen and (max-width: 600px) {
+    .business-card {
+        width: 90%;
+        padding: 15px;
+    }
+
+    .profile-image {
+        width: 100px;
+        height: 100px;
+    }
+
+    .icon {
+        width: 35px;
+        height: 35px;
+    }
+
+    h1 {
+        font-size: 1.2em;
+    }
+
+    p {
+        font-size: 0.8em;
+    }
+}
